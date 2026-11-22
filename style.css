@@ -1,0 +1,37 @@
+:root { --white:#fff; --ink:#020605; --forest:#0b2a1c; }
+* { box-sizing:border-box; margin:0; padding:0; }
+html,body { height:100%; overflow:hidden; }
+body {
+  background-color:var(--ink);
+  /* Drop a background.jpg next to this file to replace the CSS atmosphere */
+  background-image:
+    url("background.jpg"),
+    radial-gradient(ellipse 40% 30% at 18% 28%, rgba(40,140,80,.30), transparent 70%),
+    radial-gradient(ellipse 30% 22% at 82% 20%, rgba(30,110,70,.25), transparent 70%),
+    radial-gradient(ellipse 60% 25% at 50% 100%, rgba(20,80,50,.35), transparent 70%),
+    linear-gradient(180deg, #020605 0%, var(--forest) 55%, #020605 100%);
+  background-size:cover; background-position:center;
+  color:var(--white);
+  font-family:"Montserrat","Gotham","Helvetica Neue",Arial,sans-serif;
+}
+body::after { content:""; position:fixed; inset:0; pointer-events:none;
+  background:radial-gradient(ellipse at center, rgba(0,0,0,.15) 30%, rgba(0,0,0,.75) 100%); }
+.stage { position:relative; z-index:1; height:100%; display:flex; flex-direction:column;
+  align-items:center; justify-content:center; gap:clamp(1.5rem,5vh,4rem); padding:0 2vw; }
+.title { font-weight:800; text-transform:uppercase; letter-spacing:.14em;
+  font-size:clamp(1.2rem,3.6vw,3.6rem); text-align:center; text-shadow:0 0 30px rgba(0,0,0,.8); }
+.clock { width:100%; display:flex; justify-content:center; align-items:flex-start; gap:clamp(.2rem,1.2vw,1.6rem); }
+.unit { display:flex; flex-direction:column; align-items:center; flex:0 1 auto; min-width:0; }
+.num { font-weight:800; font-variant-numeric:tabular-nums; line-height:1;
+  font-size:clamp(2.2rem,9.5vw,9rem); letter-spacing:.04em; text-shadow:0 0 40px rgba(0,0,0,.8); }
+.colon { font-weight:800; line-height:1; font-size:clamp(2.2rem,9.5vw,9rem); }
+.label { margin-top:clamp(.4rem,1.2vw,1rem); font-weight:600; letter-spacing:.2em;
+  font-size:clamp(.45rem,1.1vw,1rem); }
+.music { position:fixed; z-index:2; left:max(1rem,env(safe-area-inset-left)); bottom:max(1rem,env(safe-area-inset-bottom));
+  display:inline-flex; align-items:center; gap:.5rem; padding:.6rem 1rem; border-radius:999px; cursor:pointer;
+  color:var(--white); font:600 .7rem/1 inherit; font-family:inherit; letter-spacing:.14em;
+  background:rgba(10,20,15,.35); border:1px solid rgba(255,255,255,.22);
+  -webkit-backdrop-filter:blur(10px); backdrop-filter:blur(10px); }
+.music:hover { background:rgba(20,40,30,.5); }
+.music:focus-visible { outline:2px solid #fff; outline-offset:3px; }
+@media (max-width:480px) { .colon { display:none; } .clock { gap:.8rem; } .num { font-size:clamp(2rem,13vw,3.5rem); } .label { font-size:.45rem; letter-spacing:.1em; } }

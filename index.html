@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GLORIOUS PURPOSE</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="stage">
+  <h1 class="title">GLORIOUS PURPOSE</h1>
+  <div class="clock" role="timer" aria-label="Countdown to May 16, 2028, 00:00 Nepal Time">
+    <div class="unit"><span class="num" id="months">00</span><span class="label">MONTHS</span></div>
+    <span class="colon" aria-hidden="true">:</span>
+    <div class="unit"><span class="num" id="days">00</span><span class="label">DAYS</span></div>
+    <span class="colon" aria-hidden="true">:</span>
+    <div class="unit"><span class="num" id="hours">00</span><span class="label">HOURS</span></div>
+    <span class="colon" aria-hidden="true">:</span>
+    <div class="unit"><span class="num" id="minutes">00</span><span class="label">MINUTES</span></div>
+    <span class="colon" aria-hidden="true">:</span>
+    <div class="unit"><span class="num" id="seconds">00</span><span class="label">SECONDS</span></div>
+  </div>
+</main>
+<button class="music" id="music" type="button" aria-pressed="false">
+  <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M9 3v11.3A3.5 3.5 0 1 0 11 17.5V7.8l8-1.6v6.1a3.5 3.5 0 1 0 2 3.2V3z"/></svg>
+  <span id="musicText">MUSIC OFF</span>
+</button>
+<audio id="bgm" src="purpose-is-glorious.mp3" loop preload="auto"></audio>
+<script src="script.js"></script>
+</body>
+</html>
